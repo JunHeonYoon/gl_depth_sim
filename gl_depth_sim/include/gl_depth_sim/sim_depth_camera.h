@@ -70,6 +70,12 @@ public:
   bool add(const Mesh& mesh, const Eigen::Isometry3d& pose);
 
   /**
+   * @brief Clears the scene of all triangle meshes.
+   * @return True if the scene was cleared, false if there was an error.
+   */
+  bool clear();
+
+  /**
    * @brief Moves a triangle mesh within the scene given an identifier string and a pose in world coordinates.
    */
   bool move(const std::string mesh_id, const Eigen::Isometry3d& pose);

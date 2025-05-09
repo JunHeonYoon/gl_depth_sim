@@ -149,6 +149,15 @@ bool gl_depth_sim::SimDepthCamera::add( const Mesh& mesh, const Eigen::Isometry3
   return true;
 }
 
+bool gl_depth_sim::SimDepthCamera::clear()
+{
+  for(auto &kv : objects_)
+    kv.second.mesh.reset();
+
+  objects_.clear();
+  return true;
+}
+
 bool gl_depth_sim::SimDepthCamera::move(const std::string mesh_id, const Eigen::Isometry3d &pose)
 {
   objects_[mesh_id].pose = pose;
